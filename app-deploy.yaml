@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
         - name: students-database-dotnet-docker-app
-          image: students-database-dotnet-docker_app:latest
-          imagePullPolicy: IfNotPresent
+          image: students-database-dotnet-docker-app:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 5000
 

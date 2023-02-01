@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-app
+  namespace: default
+  # namespace for ingress resource i.e this file should be same as pod and services
+  # namespace for ingress controller can be different
+spec:
+  rules:
+  - host: app.student.com
+    http: 
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: app-service
+                port:
+                  number: 5000
+
+
+                  # ingress url issue while using wsl2
+                  # ingress is set up correctly but cant be accessd due to wsl2 config
+                  
